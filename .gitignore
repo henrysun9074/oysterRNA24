@@ -1,0 +1,9 @@
+*.sam
+*.bam
+*.txt
+*.html
+*.tabular
+/results/
+/go_term_RU25/
+/logs/
+/ref/
