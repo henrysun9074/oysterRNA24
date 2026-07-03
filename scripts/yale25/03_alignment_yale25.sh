@@ -2,8 +2,8 @@
 #SBATCH --job-name=Yale25_alignment_array
 #SBATCH --time=7-00:00:00
 #SBATCH --array=1-18
-#SBATCH --output=/work/clh162/OysterRNA24/logs/hisat2_alignment_Yale25_%A_%a.out
-#SBATCH --error=/work/clh162/OysterRNA24/logs/hisat2_alignment_Yale25_%A_%a.err
+#SBATCH --output=/work/clh162/henry/logs/Yale25_hisat2_alignment_%A_%a.out
+#SBATCH --error=/work/clh162/henry/logs/Yale25_hisat2_alignment_%A_%a.err
 #SBATCH --partition=common
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=8
