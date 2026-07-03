@@ -14,7 +14,7 @@ sbatch --dependency=afterok:$JOB_QC 04_featurecounts.sh
 cd /work/clh162/henry/scripts/yale25
 
 # 1. Submit sam_to_bam to run after featurecounts finishes for CV2017
-JOB_BAM2=$(sbatch --dependency=afterok:49231501 03_sam_to_bam.sh | awk '{print $4}')
+JOB_BAM2=$(sbatch --dependency=afterok:49231937 03_sam_to_bam.sh | awk '{print $4}')
 
 # 2. Submit multiqc to run after sam_to_bam finishes successfully
 JOB_QC2=$(sbatch --dependency=afterok:$JOB_BAM2 03b_multiqc.sh | awk '{print $4}')
