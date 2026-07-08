@@ -1,5 +1,5 @@
 #!/bin/bash -e
-#SBATCH --job-name=cv2017_featureCounts_array
+#SBATCH --job-name=cv2017_featureCounts
 #SBATCH --time=7-00:00:00
 #SBATCH --output=/work/clh162/henry/logs/featureCounts_gtf.out
 #SBATCH --error=/work/clh162/henry/logs/featureCounts_gtf.err
@@ -24,8 +24,8 @@ echo "Running featureCounts on all samples simultaneously..."
 featureCounts \
     -T ${SLURM_CPUS_PER_TASK} \
     -p --countReadPairs -B \
-    -t gene \
+    -t exon \
     -g gene_id \
-    -a ${GENOME}/*.gtf \
-    -o ${COUNT_DIR}/gene_counts_matrix.txt \
+    -a ${GENOME}/fixed_ncbi_annotation.gtf \
+    -o ${COUNT_DIR}/counts_matrix.txt \
     ${BAM_DIR}/*_sorted.bam
